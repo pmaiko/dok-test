@@ -1,0 +1,26 @@
+.rating-stars {
+  display: flex;
+  margin: 0 -3px;
+
+  &__item {
+    align-items: center;
+    padding: 0 3px;
+  }
+}
+
+.rating-star {
+  width: 16px;
+  height: 16px;
+  background-image: url("../assets/stars/star.svg");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &--active {
+    background-image: url("../assets/stars/star-active.svg");
+  }
+
+  &--half {
+    background-image: url("../assets/stars/star-half.svg");
+  }
+}

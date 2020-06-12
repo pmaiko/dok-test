@@ -1,15 +1,25 @@
 <template>
-    <div class="row">
-
+    <div class="section">
+        <div class="section-title">
+            Что-то новенькое
+        </div>
+        <div class="products">
+            <card />
+        </div>
     </div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
+import Card from './ProductCard'
+export default {
+    data() {
+        return {
 
-            }
         }
+    },
+
+    components: {
+        Card,
     }
+}
 </script>

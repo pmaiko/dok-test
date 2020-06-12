@@ -1,0 +1,99 @@
+.products {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .product-card {
+    max-width: 25%;
+
+  }
+}
+.product-card {
+  padding: 0 20px;
+  margin: 50px 0;
+
+  &__image-link {
+    display: block;
+    position: relative;
+    padding: 32px 8px;
+  }
+
+  &__favorite {
+    position: absolute;
+    bottom: 17px;
+    right: 8px;
+    z-index: 2;
+  }
+
+  &__text-link {
+    display: block;
+    text-decoration: none;
+    line-height: 1.56;
+    letter-spacing: normal;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:hover .product-card__brand-name {
+      text-decoration: underline;
+    }
+  }
+
+  &__rating {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .rating-stars {
+      padding: 0 0 8px 0;
+      margin-right: 10px;
+    }
+
+    .rating-count {
+      padding: 0 0 8px 0;
+      color: #999999;
+      font-size: 13px;
+      line-height: 1.54;
+    }
+  }
+
+  &__brand-name {
+    font-size: 16px;
+    margin-top: 26px;
+    line-height: 1.56;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  &__title {
+    font-size: 16px;
+    color: initial;
+  }
+
+  &__info-buy-block {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price-wrap {
+
+  }
+
+  &__price {
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 500;
+
+    &-currency {
+      font-size: 13px;
+      line-height: 1.54;
+    }
+  }
+
+  &__available {
+    font-size: 13px;
+    margin-top: 5px;
+  }
+}
