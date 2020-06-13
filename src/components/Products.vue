@@ -4,7 +4,9 @@
             {{sectionTitle}}
         </div>
         <div :class="el"
-             class="products owl-carousel">
+             class="products owl-carousel"
+             itemscope itemtype="http://schema.org/ItemList"
+        >
             <template v-for="(product, key) in products">
                 <card :key="key"
                       :brandName="product.brand_name"
@@ -14,6 +16,7 @@
                       :rating="parseFloat(product.rating)"
                       :ratingCount="parseFloat(product.rating_count)"
                       :productImageAlt="product.product_image_alt"
+                      :urlDirect="product.url_direct"
                 />
             </template>
 
