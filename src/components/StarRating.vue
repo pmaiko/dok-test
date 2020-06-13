@@ -23,28 +23,30 @@
         props: ['value'],
 
         mounted() {
-            let countActiveStars = this.value.toFixed();
-            let countAfterPoint = this.value - parseInt(this.value);
+            if(this.value !== undefined && this.value !== null) {
+                let countActiveStars = this.value.toFixed();
+                let countAfterPoint = this.value - parseInt(this.value);
 
-            for (let i = 1; i <= this.starsCount; i++) {
-                if (i <= countActiveStars) {
-                    this.stars.push({
-                        activeStar: true,
-                    });
+                for (let i = 1; i <= this.starsCount; i++) {
+                    if (i <= countActiveStars) {
+                        this.stars.push({
+                            activeStar: true,
+                        });
 
-                    if (i === parseInt(countActiveStars)) {
-                        if (countAfterPoint > 0.2 && countAfterPoint < 0.5) {
-                            this.stars.push({
-                                halfStar: true,
-                            });
+                        if (i === parseInt(countActiveStars)) {
+                            if (countAfterPoint > 0.2 && countAfterPoint < 0.5) {
+                                this.stars.push({
+                                    halfStar: true,
+                                });
 
-                            i++;
+                                i++;
+                            }
                         }
-                    }
 
-                }
-                else {
-                    this.stars.push({});
+                    }
+                    else {
+                        this.stars.push({});
+                    }
                 }
             }
         },

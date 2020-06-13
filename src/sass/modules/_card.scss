@@ -11,6 +11,9 @@
 .product-card {
   padding: 0 20px;
   margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &__image-link {
     display: block;
@@ -46,7 +49,7 @@
     flex-wrap: wrap;
 
     .rating-stars {
-      padding: 0 0 8px 0;
+      padding: 0 0 18px 0;
       margin-right: 10px;
     }
 
@@ -69,12 +72,22 @@
   &__title {
     font-size: 16px;
     color: initial;
+    min-height: 50px;
   }
 
-  &__info-buy-block {
-    padding-top: 5px;
+  &__info-buy {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card__buy-wrap {
     display: flex;
     justify-content: space-between;
+
+    .btn-buy {
+      margin-top: 5px;
+      margin-left: 10px;
+    }
   }
 
   &__price-wrap {

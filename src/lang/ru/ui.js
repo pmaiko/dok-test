@@ -5,6 +5,7 @@ export default {
         buy: 'Купить',
         areAvailable: 'Есть в наличии',
         recommendations: 'рекомендации',
-        grn: 'грн'
+        grn: 'грн',
+        onOrder: 'Под заказ'
     },
 };

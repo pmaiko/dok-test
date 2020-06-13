@@ -6,7 +6,13 @@
         <div class="products">
             <template v-for="(product, key) in products">
                 <card :key="key"
-                      :product="product"
+                      :brandName="product.brand_name"
+                      :available="parseFloat(product.available)"
+                      :price="product.price"
+                      :productTitle="product.product_title"
+                      :rating="parseFloat(product.rating)"
+                      :ratingCount="product.rating_count"
+                      :productImageAlt="product.product_image_alt"
                 />
             </template>
 
