@@ -24,7 +24,7 @@
                 <star-rating  v-model="rating" />
 
                 <div class="rating-count">
-                    ({{ ratingCount }} <span>{{$t('translation.recommendations')}}</span>)
+                    ({{ ratingCount }} <span>{{ ratingCountText }}</span>)
                 </div>
             </div>
             <div class="product-card__buy-wrap">
@@ -39,7 +39,7 @@
                         </div>
                     </template>
                     <template v-else>
-                        <div class="product-card__available text-success">
+                        <div class="product-card__available">
                             {{$t('translation.onOrder')}}
                         </div>
                     </template>
@@ -59,6 +59,31 @@ export default {
         return {
             starRatingCount: 5,
             isFavorite: false,
+        }
+    },
+
+    computed: {
+        ratingCountText() {
+            let n = (this.ratingCount);
+            let text = [
+                this.$t('translation.recommendation'),
+                this.$t('translation.recommendations'),
+                this.$t('translation.ofRecommendations')
+            ];
+            n = Math.abs(n) % 100;
+            let n1 = n % 10;
+
+            if (n > 10 && n < 20) {
+                return text[2];
+            }
+            if (n1 > 1 && n1 < 5) {
+                return text[1];
+            }
+            if (n1 == 1) {
+                return text[0];
+            }
+
+            return text[2];
         }
     },
 

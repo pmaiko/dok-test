@@ -6,6 +6,8 @@ export default {
         areAvailable: 'Есть в наличии',
         recommendations: 'рекомендации',
         grn: 'грн',
-        onOrder: 'Под заказ'
+        onOrder: 'Под заказ',
+        recommendation: 'рекомендация',
+        ofRecommendations: 'рекомендаций',
     },
 };

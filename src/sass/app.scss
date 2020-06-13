@@ -50,6 +50,7 @@ img {
 
 .section {
   margin: 77px 0;
+  padding: 0 70px;
   width: 100%;
 }
 
@@ -73,5 +74,63 @@ img {
 
   &--favorite-active {
     background-image: url("../assets/icons/favorite-active.svg");
+  }
+}
+
+.arrow {
+  width: 58px;
+  height: 58px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &--right {
+    background-image: url("../assets/icons/arrow-right.svg");
+  }
+
+  &--left {
+    background-image: url("../assets/icons/arrow-left.svg");
+  }
+
+}
+
+.owl-carousel {
+  .owl-stage {
+    display: flex;
+  }
+
+  .owl-item {
+    display: flex;
+  }
+
+  .owl-nav {
+    .owl-next {
+      position: absolute;
+      right: -42px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .owl-prev {
+      position: absolute;
+      left: -42px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  .section {
+    padding: 0 25px;
   }
 }
