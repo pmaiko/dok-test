@@ -1,7 +1,7 @@
 <template>
     <div class="section">
         <div class="section-title">
-            Что-то новенькое
+            {{$t('translation.productsTitleNew')}}
         </div>
         <div class="products">
             <card />

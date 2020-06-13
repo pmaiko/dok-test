@@ -21,22 +21,22 @@
             <star-rating  v-model="starRatingCount" />
 
             <div class="rating-count">
-                (2 рекомендации)
+                (2 <span>{{$t('translation.recommendations')}}</span>)
             </div>
         </div>
 
         <div class="product-card__info-buy-block">
             <div class="product-card__price-wrap">
                 <div class="product-card__price">
-                    3 497 <span class="product-card__price-currency">грн</span>
+                    3 497 <span class="product-card__price-currency">{{$t('translation.grn')}}</span>
                 </div>
 
                 <div class="product-card__available text-success">
-                    Есть в наличии
+                    {{$t('translation.areAvailable')}}
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-buy">Купить</button>
+            <button class="btn btn-primary btn-buy">{{$t('translation.buy')}}</button>
         </div>
     </article>
 </template>
