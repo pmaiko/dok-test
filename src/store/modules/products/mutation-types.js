@@ -1,1 +1,2 @@
-export const GET_PRODUCTS = 'CLEAR_INDEX';
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const SORT_PRODUCTS = 'SORT_PRODUCTS';

@@ -7,6 +7,21 @@ export const getProducts = ({commit}) => {
     });
 };
 
+export const sortProducts = ({dispatch, commit, getters}) => {
+    let products = [...getters.products];
+
+    if (products.length > 0) {
+        commit(types.SORT_PRODUCTS, products.sort(() => Math.random() - 0.5));
+    }
+
+    else {
+        dispatch('getProducts').then(() => {
+            commit(types.SORT_PRODUCTS, products.sort(() => Math.random() - 0.5));
+        });
+    }
+};
+
 export default {
     getProducts,
+    sortProducts,
 };

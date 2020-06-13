@@ -4,4 +4,8 @@ export default {
     [types.GET_PRODUCTS] (state, payload) {
         state.products = payload;
     },
+
+    [types.SORT_PRODUCTS] (state, payload) {
+        state.newProducts = payload;
+    }
 };

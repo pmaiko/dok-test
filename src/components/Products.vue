@@ -1,9 +1,10 @@
 <template>
     <div class="section">
         <div class="section-title">
-            {{$t('translation.productsTitleBest')}}
+            {{sectionTitle}}
         </div>
-        <div class="products products-carousel owl-carousel">
+        <div :class="el"
+             class="products owl-carousel">
             <template v-for="(product, key) in products">
                 <card :key="key"
                       :brandName="product.brand_name"
@@ -22,7 +23,6 @@
 
 <script>
 import Card from './ProductCard'
-import {mapGetters} from 'vuex'
 
 export default {
     data() {
@@ -30,55 +30,14 @@ export default {
         }
     },
 
-    computed: {
-        ...mapGetters(['products']),
-    },
+    props: [
+        'sectionTitle',
+        'products',
+        'el',
+    ],
 
     components: {
         Card,
     },
-
-    async mounted() {
-        await this.$store.dispatch('getProducts');
-        console.log(this.products);
-
-        this.$nextTick(() => {
-            window.$(".products-carousel").owlCarousel({
-                items: 5,
-                dots: false,
-                navText:["<div class='arrow arrow--left' style='display: none'></div>","<div class='arrow arrow--right'></div>"],
-                responsive: {
-                    0: {
-                        items: 1.5,
-                        nav: false,
-                        loop: true,
-                    },
-                    768: {
-                        items: 2,
-                        nav: true,
-                    },
-                    992: {
-                        items: 3,
-                        nav: true,
-                    },
-
-                    1280: {
-                        items: 4,
-                        nav: true,
-                    },
-                },
-
-                onTranslated: (e) => {
-                    if (e.item.index !== 0) {
-                        window.$('.products-carousel .arrow.arrow--left').removeAttr('style');
-                    }
-
-                    else {
-                        window.$('.products-carousel .arrow.arrow--left').attr('style', 'display: none');
-                    }
-                }
-            });
-        });
-    }
 }
 </script>
